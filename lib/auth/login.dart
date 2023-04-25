@@ -11,33 +11,25 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
   bool _isError = false;
   bool _isEmailEmpty = false;
-  bool _isPasswordEmpty = false;
 
   void _performLogin() {
     setState(() {
       _isEmailEmpty = _emailController.text.trim().isEmpty;
-      _isPasswordEmpty = _passwordController.text.trim().isEmpty;
-      if (_isEmailEmpty || _isPasswordEmpty) {
+
+      if (_isEmailEmpty) {
         _isError = true;
       } else {
-        // Perform simple authentication here
         final email = _emailController.text.trim();
-        final password = _passwordController.text.trim();
-        if (email == 'user@example.com' && password == 'password') {
-          _isError = false;
-          // Navigate to the next screen on successful login
-          Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return const BookListScreen();
-          }));
-        } else {
-          _isError = true;
-          // Clear the password field on failed login
-          _passwordController.clear();
-          _emailController.clear();
-        }
+        // Perform simple authentication here
+        _isError = false;
+        // Navigate to the next screen on successful login
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return BookListScreen(
+            mail: email,
+          );
+        }));
       }
     });
   }
@@ -58,32 +50,19 @@ class _LoginScreenState extends State<LoginScreen> {
                 keyboardType: TextInputType.emailAddress,
                 textAlign: TextAlign.center,
                 decoration: InputDecoration(
-                  hintText: 'Enter your email',
+                  hintText: 'Hi! kenalan yuk',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(32.0),
                   ),
-                  errorText: _isEmailEmpty ? 'Email cannot be empty' : null,
+                  errorText: _isEmailEmpty ? 'Nama kamu masih kosong :(' : null,
                 ),
               ),
               const SizedBox(height: 8.0),
-              TextField(
-                controller: _passwordController,
-                obscureText: true,
-                textAlign: TextAlign.center,
-                decoration: InputDecoration(
-                  hintText: 'Enter your password',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(32.0),
-                  ),
-                  errorText:
-                      _isPasswordEmpty ? 'Password cannot be empty' : null,
-                ),
-              ),
               if (_isError)
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
                   child: Text(
-                    'Invalid email or password',
+                    'nama pengguna tidak valid',
                     style: TextStyle(
                       color: Colors.red,
                       fontWeight: FontWeight.bold,
@@ -100,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: BorderRadius.circular(32.0),
                   ),
                 ),
-                child: const Text('Log In'),
+                child: const Text('mulai membaca'),
               ),
             ],
           ),

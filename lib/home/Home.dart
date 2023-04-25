@@ -4,14 +4,16 @@ import 'package:submissoin_bfp/model/books_list.dart';
 import '../details/book_details.dart';
 
 class BookListScreen extends StatelessWidget {
-  const BookListScreen({super.key});
+  final String mail;
+
+  const BookListScreen({super.key, required this.mail});
 
   @override
   Widget build(BuildContext context) {
     var books = bookList;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Book List'),
+        title: Text('welcome, $mail'),
       ),
       body: GridView.builder(
         gridDelegate:
