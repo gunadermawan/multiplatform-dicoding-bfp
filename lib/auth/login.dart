@@ -44,6 +44,14 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Image.asset(
+                  'images/books.jpeg',
+                  height: 250,
+                  fit: BoxFit.fill,
+                ),
+              ),
               const SizedBox(height: 48.0),
               TextField(
                 controller: _emailController,
@@ -62,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
                   child: Text(
-                    'nama pengguna tidak valid',
+                    'input tidak valid',
                     style: TextStyle(
                       color: Colors.red,
                       fontWeight: FontWeight.bold,
