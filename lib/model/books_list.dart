@@ -13,11 +13,11 @@ class Book {
 
 var bookList = [
   Book(
-    title: 'The Great Gatsby',
-    author: 'F. Scott Fitzgerald',
-    imageUrl: 'https://picsum.photos/200/300',
+    title: 'Atomic Habbits',
+    author: 'James Clear',
+    imageUrl: 'images/atomicHabbits.jpeg',
     description:
-        'The Great Gatsby is a novel by American author F. Scott Fitzgerald. First published by Scribner\'s in April 1925, it is set in Long Island\'s North Shore and New York City during the summer of 1922.',
+        'No matter your goals, Atomic Habits offers a proven framework for improving—every day. James Clear, one of the world\'s leading experts on habit formation, reveals practical strategies that will teach you exactly how to form good habits, bad ones, and master the tiny behaviors that lead to remarkable results.',
   ),
   Book(
     title: 'To Kill a Mockingbird',

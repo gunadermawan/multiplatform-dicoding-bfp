@@ -13,7 +13,7 @@ class BookListScreen extends StatelessWidget {
     var books = bookList;
     return Scaffold(
       appBar: AppBar(
-        title: Text('welcome, $mail'),
+        title: Text('selamat membaca, $mail'),
       ),
       body: GridView.builder(
         gridDelegate:
