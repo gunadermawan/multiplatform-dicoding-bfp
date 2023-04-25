@@ -34,10 +34,9 @@ class BookListScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.network(
+                Image.asset(
                   books.imageUrl,
-                  height: 200,
-                  width: 200,
+                  height: 150,
                   fit: BoxFit.fitWidth,
                 ),
                 const SizedBox(width: 8),

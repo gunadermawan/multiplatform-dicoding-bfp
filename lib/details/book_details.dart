@@ -17,7 +17,7 @@ class BookDetailScreen extends StatelessWidget {
         children: [
           SizedBox(
             height: 240,
-            child: Image.network(
+            child: Image.asset(
               book.imageUrl,
               fit: BoxFit.cover,
             ),
@@ -30,12 +30,14 @@ class BookDetailScreen extends StatelessWidget {
                 children: [
                   const SizedBox(height: 8),
                   Text(book.title,
-                      style:
-                          const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                      style: const TextStyle(
+                          fontSize: 24, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 8),
                   Text(book.author, style: const TextStyle(fontSize: 20)),
-                  const SizedBox(height: 16),
-                  Text(book.description, style: const TextStyle(fontSize: 18)),
+                  const SizedBox(height: 8),
+                  Expanded(
+                      child: Text(book.description,
+                          style: const TextStyle(fontSize: 18))),
                 ],
               ),
             ),

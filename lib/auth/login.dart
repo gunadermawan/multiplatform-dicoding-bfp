@@ -44,14 +44,6 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: Image.asset(
-                  'images/books.jpeg',
-                  height: 250,
-                  fit: BoxFit.fill,
-                ),
-              ),
               const SizedBox(height: 48.0),
               TextField(
                 controller: _emailController,
@@ -65,7 +57,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   errorText: _isEmailEmpty ? 'Nama kamu masih kosong :(' : null,
                 ),
               ),
-              const SizedBox(height: 8.0),
               if (_isError)
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
@@ -78,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-              const SizedBox(height: 24.0),
+              const SizedBox(height: 8.0),
               ElevatedButton(
                 onPressed: _performLogin,
                 style: ElevatedButton.styleFrom(
